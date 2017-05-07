@@ -39,7 +39,7 @@ class DayReport{
 
 
             if(gameOver){
-                setTimeout(this.gameOver,4000);;
+                setTimeout(this.gameOver,4000);
                 }
             }
 

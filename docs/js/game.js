@@ -1,8 +1,13 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var DayReport = (function () {
     function DayReport(day, playerMove, event, eventP, gameOver) {
         this.log = false;
@@ -31,7 +36,6 @@ var DayReport = (function () {
             this.target3.innerHTML += "</br>" + event;
             if (gameOver) {
                 setTimeout(this.gameOver, 4000);
-                ;
             }
         }
         else if (eventP) {
@@ -124,10 +128,11 @@ var Hero = (function () {
 var Fritz = (function (_super) {
     __extends(Fritz, _super);
     function Fritz() {
-        _super.call(this, "fritz");
-        this.x = 2005;
-        this.y = 115;
-        this.location = "town";
+        var _this = _super.call(this, "fritz") || this;
+        _this.x = 2005;
+        _this.y = 115;
+        _this.location = "town";
+        return _this;
     }
     Fritz.prototype.selectGoal = function () {
         var rando = Math.floor((Math.random() * 20) + 1);
@@ -364,10 +369,11 @@ window.addEventListener("load", function () {
 var Hash = (function (_super) {
     __extends(Hash, _super);
     function Hash() {
-        _super.call(this, "hash");
-        this.x = 1645;
-        this.y = 650;
-        this.location = "graveyard";
+        var _this = _super.call(this, "hash") || this;
+        _this.x = 1645;
+        _this.y = 650;
+        _this.location = "graveyard";
+        return _this;
     }
     Hash.prototype.selectGoal = function (treasureLocation) {
         var rando = Math.floor((Math.random() * 2) + 1);
